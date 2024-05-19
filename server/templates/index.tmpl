@@ -1,5 +1,16 @@
 {{ template "index" }}
 
+{{ define "head" }}
+    {{ $assetData := ViteAsset "index.html" }}
+    {{ range $val := $assetData.Css }}
+        <link rel="stylesheet" href="{{ $val }}">
+    {{ end }}
+{{ end }}
+
 {{ define "main" }}
-    <p>Main page</p>
+    {{ $assetData := ViteAsset "index.html" }}
+    <div id="root"></div>
+    {{ if $assetData.Js }}
+        <script type="module" src="{{ $assetData.Js }}"></script>
+    {{ end }}
 {{ end }}

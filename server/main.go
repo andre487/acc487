@@ -73,7 +73,10 @@ func setupRouter() *gin.Engine {
 }
 
 func loadTemplates() (*template.Template, error) {
-	t := template.New("")
+	t := template.New("").Funcs(template.FuncMap{
+		"ViteAsset": utils.CreateAssetGetter(AssetsStatic),
+	})
+
 	for name, file := range AssetsTemplates.Files {
 		if file.IsDir() || !strings.HasSuffix(name, ".tmpl") {
 			continue
