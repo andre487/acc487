@@ -46,6 +46,15 @@ func setupRouter() *gin.Engine {
 		})
 	})
 
+	authorized.GET("test-data", func(c *gin.Context) {
+		var data = map[string]string{
+			"foo":  "bar",
+			"baz":  "qux",
+			"quux": "tri",
+		}
+		c.JSON(http.StatusOK, gin.H{"data": data})
+	})
+
 	/* example curl for /admin with basicauth header
 	   Zm9vOmJhcg== is base64("foo:bar")
 

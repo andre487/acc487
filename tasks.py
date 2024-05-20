@@ -1,10 +1,14 @@
 import os
 import shutil
+import subprocess as sp
+from concurrent.futures import ThreadPoolExecutor
 
 # noinspection PyUnresolvedReferences
 from invoke import task
 
-FRONTEND_DIR = os.path.join(os.path.dirname(__file__), 'frontend')
+ROOT_DIR = os.path.dirname(__file__)
+SERVER_DIR = os.path.join(ROOT_DIR, 'server')
+FRONTEND_DIR = os.path.join(ROOT_DIR, 'frontend')
 
 
 @task
@@ -32,7 +36,17 @@ def build_assets(c):
 def run_dev(c):
     if not shutil.which('modd'):
         c.run('go install github.com/cortesi/modd/cmd/modd@latest', pty=True)
-    c.run('modd', pty=True)
+
+    def run_server():
+        sp.check_call(['modd'])
+
+    def run_frontend():
+        sp.check_call(['pnpm', 'run', 'build:watch'], cwd=FRONTEND_DIR)
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        pool.submit(run_server)
+        pool.submit(run_frontend)
+
 
 
 @task(build_frontend, build_assets)

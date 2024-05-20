@@ -20,7 +20,4 @@ export default defineConfig({
             plugins: [nodeResolve(), commonjs()],
         },
     },
-    define: {
-        '__APP__': 'foo',
-    },
 });
