@@ -42,6 +42,9 @@ importers:
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
+      eslint-config-google:
+        specifier: ^0.14.0
+        version: 0.14.0(eslint@8.57.0)
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.2(eslint@8.57.0)
@@ -721,6 +724,12 @@ packages:
   escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==, tarball: https://npm.yandex-team.ru/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz?rbtorrent=c4f07b8ebef35e122404211f688e5148c3c94d0c}
     engines: {node: '>=10'}
+
+  eslint-config-google@0.14.0:
+    resolution: {integrity: sha512-WsbX4WbjuMvTdeVL6+J3rK1RGhCTqjsFjX7UMSMgZiyxxaNLkoJENbrGExzERFeoTpGw3F3FypTiWAP9ZXzkEw==, tarball: https://npm.yandex-team.ru/eslint-config-google/-/eslint-config-google-0.14.0.tgz?rbtorrent=d4135d43a5574d91e58ccd3144e445deda33d0d6}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      eslint: '>=5.16.0'
 
   eslint-plugin-react-hooks@4.6.2:
     resolution: {integrity: sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==, tarball: https://npm.yandex-team.ru/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.2.tgz?rbtorrent=}
@@ -1875,6 +1884,10 @@ snapshots:
   escape-string-regexp@1.0.5: {}
 
   escape-string-regexp@4.0.0: {}
+
+  eslint-config-google@0.14.0(eslint@8.57.0):
+    dependencies:
+      eslint: 8.57.0
 
   eslint-plugin-react-hooks@4.6.2(eslint@8.57.0):
     dependencies:
