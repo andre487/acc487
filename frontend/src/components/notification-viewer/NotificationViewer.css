@@ -1,0 +1,24 @@
+.notification-viewer {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    position: absolute;
+    right: 10px;
+}
+
+.notification-viewer__message {
+    padding: 10px;
+    background: var(--purple-800);
+    color: var(--white);
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.notification-viewer__message + .notification-viewer__message {
+    margin-top: 10px;
+}
+
+.notification-viewer__message_type_error {
+    background: var(--red-800);
+}

@@ -14,4 +14,5 @@ export interface WindowWithConfig extends Window {
 export interface AppData {
     appData?: object;
     errors?: Error[];
+    notifications?: string[];
 }
