@@ -1,0 +1,22 @@
+@import './colors.css';
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: normal;
+
+    color-scheme: light dark;
+    color: var(--gray-50);
+    background-color: var(--blue-gray-900);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+}

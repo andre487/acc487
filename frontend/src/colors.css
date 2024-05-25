@@ -1,0 +1,19 @@
+/* https://m2.material.io/design/color/the-color-system.html */
+:root {
+    --white: #fff;
+    --black: #000;
+
+    --gray-50: #fafafa;
+    --gray-900: #212121;
+    --blue-gray-900: #263238;
+
+    --red-50: #ffebee;
+    --red-100: #ffcdd2;
+    --red-200: #ef9a9a;
+    --red-900: #b71c1c;
+
+    --purple-800: #6a1b9a;
+    --purple-a700: #a0f;
+
+    --deep-purple-900: #311b92;
+}

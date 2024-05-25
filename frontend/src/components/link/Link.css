@@ -1,0 +1,15 @@
+.link {
+    color: var(--purple-a700);
+}
+
+.link:hover {
+    color: var(--purple-800);
+}
+
+.link.link_theme_white {
+    color: var(--white);
+}
+
+.link.link_theme_white:hover {
+    color: var(--red-50);
+}
