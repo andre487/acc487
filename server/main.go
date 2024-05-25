@@ -12,6 +12,8 @@ import (
 	"github.com/andre487/acc487/utils"
 )
 
+const AssetsDir = "../assets"
+
 var db = make(map[string]string)
 
 func main() {
@@ -27,7 +29,7 @@ func setupRouter() *gin.Engine {
 
 	r := gin.New()
 	r.SetHTMLTemplate(t)
-	r.StaticFS("/assets", AssetsStatic)
+	r.StaticFS("/assets", http.Dir(AssetsDir))
 
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "OK")
@@ -83,7 +85,7 @@ func setupRouter() *gin.Engine {
 
 func loadTemplates() (*template.Template, error) {
 	t := template.New("").Funcs(template.FuncMap{
-		"ViteAsset": utils.CreateAssetGetter(AssetsStatic),
+		"ViteAsset": utils.CreateAssetGetter(AssetsDir + "/.vite/manifest.json"),
 	})
 
 	for name, file := range AssetsTemplates.Files {

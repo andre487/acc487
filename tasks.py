@@ -29,7 +29,6 @@ def build_assets(c):
         '-o server/assets_templates.go -v AssetsTemplates --strip-prefix=/server/templates',
         pty=True
     )
-    c.run('go-assets-builder assets -o server/assets_static.go -v AssetsStatic --strip-prefix=/assets', pty=True)
 
 
 @task(build_frontend, build_assets)
@@ -46,7 +45,6 @@ def run_dev(c):
     with ThreadPoolExecutor(max_workers=2) as pool:
         pool.submit(run_server)
         pool.submit(run_frontend)
-
 
 
 @task(build_frontend, build_assets)

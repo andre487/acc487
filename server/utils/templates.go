@@ -3,8 +3,7 @@ package utils
 import (
 	"encoding/json"
 	"io"
-
-	"github.com/jessevdk/go-assets"
+	"os"
 )
 
 type TmplAssetData struct {
@@ -13,19 +12,24 @@ type TmplAssetData struct {
 }
 
 var dataCache = make(map[string]TmplAssetData)
+var useCache = os.Getenv("USE_ASSET_CACHE") == "1"
 
-func CreateAssetGetter(assets *assets.FileSystem) func(name string) TmplAssetData {
-	viteManifest := Must(assets.Open("/.vite/manifest.json"))
-	defer WarnIfError(viteManifest.Close())
-
-	manifestContent := Must(io.ReadAll(viteManifest))
-	var manifestData map[string]interface{}
-	Must0(json.Unmarshal(manifestContent, &manifestData))
-
+func CreateAssetGetter(assetManifest string) func(name string) TmplAssetData {
 	return func(name string) TmplAssetData {
-		if res, ok := dataCache[name]; ok {
-			return res
+		if useCache {
+			if res, ok := dataCache[name]; ok {
+				return res
+			}
 		}
+
+		viteManifest := Must(os.Open(assetManifest))
+		defer func(viteManifest *os.File) {
+			WarnIfError(viteManifest.Close())
+		}(viteManifest)
+
+		manifestContent := Must(io.ReadAll(viteManifest))
+		var manifestData map[string]interface{}
+		Must0(json.Unmarshal(manifestContent, &manifestData))
 
 		rawNode, ok := manifestData[name]
 		if !ok {
@@ -44,7 +48,9 @@ func CreateAssetGetter(assets *assets.FileSystem) func(name string) TmplAssetDat
 			}
 		}
 
-		dataCache[name] = res
+		if useCache {
+			dataCache[name] = res
+		}
 		return res
 	}
 }
