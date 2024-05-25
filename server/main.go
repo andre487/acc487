@@ -59,6 +59,7 @@ func setupRouter() *gin.Engine {
 			"main": "index",
 			"user": user,
 			"config": map[string]any{
+				"user":         user,
 				"userSettings": settings,
 			},
 		})
