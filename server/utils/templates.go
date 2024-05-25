@@ -2,7 +2,9 @@ package utils
 
 import (
 	"encoding/json"
+	"html/template"
 	"io"
+	"log"
 	"os"
 )
 
@@ -53,4 +55,13 @@ func CreateAssetGetter(assetManifest string) func(name string) TmplAssetData {
 		}
 		return res
 	}
+}
+
+func JsonEncode(obj interface{}) template.JS {
+	js, err := json.Marshal(obj)
+	if err != nil {
+		log.Printf("Templates JSON error: %s", err)
+		return "null"
+	}
+	return template.JS(js)
 }

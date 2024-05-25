@@ -17,7 +17,6 @@ function App() {
             .then(data_ => {
                 const newData = {...data, appData: data_};
                 setData(newData);
-                console.log('Data was set', newData);
             })
             .catch(err => {
                 console.error(err);
