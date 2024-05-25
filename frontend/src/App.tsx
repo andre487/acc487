@@ -4,7 +4,6 @@ import { AppData, GlobalConfig, WindowWithConfig } from './types.ts';
 import Code from './components/code/Code.tsx';
 import { O } from 'ts-toolbelt';
 import NotificationViewer from './components/notification-viewer/NotificationViewer.tsx';
-import './App.css';
 
 export default function App() {
     const config = getConfig();
