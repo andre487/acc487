@@ -57,7 +57,7 @@ def run_dev(c):
 
     with ThreadPoolExecutor(max_workers=2) as pool:
         pool.submit(run_server)
-        # pool.submit(run_frontend)
+        pool.submit(run_frontend)
 
 
 @task(build_frontend, build_assets)

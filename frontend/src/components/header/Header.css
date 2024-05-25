@@ -1,5 +1,9 @@
 .header {
+    display: flex;
+    justify-content: space-between;
+
     padding: 10px;
+
     color: var(--white);
     background-color: var(--red-900);
     font-weight: bolder;

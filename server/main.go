@@ -59,6 +59,7 @@ func setupRouter() *gin.Engine {
 			"main": "index",
 			"user": user,
 			"config": map[string]any{
+				"apiBaseUrl":   "http://127.0.0.1:8080",
 				"user":         user,
 				"userSettings": settings,
 			},
