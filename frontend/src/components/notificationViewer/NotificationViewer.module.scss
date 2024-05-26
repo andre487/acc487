@@ -1,3 +1,5 @@
+@import '../../colors.scss';
+
 .notificationViewer {
     display: flex;
     flex-direction: column;
@@ -9,8 +11,8 @@
 
 .notificationViewer__message {
     padding: 10px;
-    background: var(--purple-800);
-    color: var(--white);
+    background: $color-purple-800;
+    color: $color-white;
     font-size: 12px;
     overflow: hidden;
 }
@@ -20,7 +22,7 @@
 }
 
 .notificationViewer__message_type_error {
-    background: var(--red-800);
+    background: $color-red-800;
 }
 
 .notificationViewer__message_type_info {

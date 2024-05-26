@@ -1,9 +1,9 @@
+import './main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import {AppContextProvider} from './utils/context.tsx';
-import {WindowWithConfig, ROGlobalConfig} from './types.ts';
-import './main.scss';
+import {ROGlobalConfig, WindowWithConfig} from './types/globals.ts';
 
 const rootNode = document.getElementById('root');
 if (rootNode) {

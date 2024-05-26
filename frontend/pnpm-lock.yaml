@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@silevis/reactgrid':
+        specifier: ^4.1.6
+        version: 4.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -38,7 +41,7 @@ importers:
         version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.11(@types/node@20.12.8)(sass@1.77.1))
+        version: 4.2.1(vite@5.2.11(types/node@20.12.8)(sass@1.77.1))
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -65,7 +68,7 @@ importers:
         version: 5.4.5
       vite:
         specifier: ^5.2.0
-        version: 5.2.11(@types/node@20.12.8)(sass@1.77.1)
+        version: 5.2.11(types/node@20.12.8)(sass@1.77.1)
 
 packages:
 
@@ -488,6 +491,12 @@ packages:
     resolution: {integrity: sha512-TGGO7v7qOq4CYmSBVEYpI1Y5xDuCEnbVC5Vth8mOsW0gDSzxNrVERPc790IGHsrT2dQSimgMr9Ub3Y1Jci5/8w==, tarball: https://npm.yandex-team.ru/@rollup%2frollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.17.2.tgz?rbtorrent=}
     cpu: [x64]
     os: [win32]
+
+  '@silevis/reactgrid@4.1.6':
+    resolution: {integrity: sha512-sD5sCE8vVXTdrLSB+6R3M51dFGsGkq35UfaZ3PIXlV3t2+b13w3WDZV6aRrvOLvX4IpLNFm/j732SAB4wl5ggA==, tarball: https://npm.yandex-team.ru/@silevis%2freactgrid/-/reactgrid-4.1.6.tgz?rbtorrent=}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.0 || ^18.2.0
+      react-dom: ^16.13.1 || ^17.0.0 || ^18.2.0
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==, tarball: https://npm.yandex-team.ru/@types%2fbabel__core/-/babel__core-7.20.5.tgz?rbtorrent=}
@@ -1219,6 +1228,9 @@ packages:
   ts-toolbelt@9.6.0:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==, tarball: https://npm.yandex-team.ru/ts-toolbelt/-/ts-toolbelt-9.6.0.tgz?rbtorrent=27bda4a86e276b1c37ce52bf49f8667213231170}
 
+  tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==, tarball: https://npm.yandex-team.ru/tslib/-/tslib-2.6.2.tgz?rbtorrent=7f559dc3bff22dd83af38b51fbaa319f7b159646}
+
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==, tarball: https://npm.yandex-team.ru/type-check/-/type-check-0.4.0.tgz?rbtorrent=2c9ca61e1431737ce0cdb7ea5296ee7636773d89}
     engines: {node: '>= 0.8.0'}
@@ -1650,6 +1662,13 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.17.2':
     optional: true
 
+  '@silevis/reactgrid@4.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      sass: 1.77.1
+      tslib: 2.6.2
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.24.5
@@ -1789,7 +1808,7 @@ snapshots:
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.11(@types/node@20.12.8)(sass@1.77.1)
+      vite: 5.2.11(types/node@20.12.8)(sass@1.77.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2424,6 +2443,8 @@ snapshots:
       typescript: 5.4.5
 
   ts-toolbelt@9.6.0: {}
+
+  tslib@2.6.2: {}
 
   type-check@0.4.0:
     dependencies:

@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react';
-import {AppData, AppDataContext, ROGlobalConfig} from '../types.ts';
+import {AppDataContext, AppData} from '../types/state.ts';
+import {ROGlobalConfig} from '../types/globals.ts';
 
 export const AppContext = React.createContext<AppDataContext | null>(null);
 

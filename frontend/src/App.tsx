@@ -1,8 +1,8 @@
 import {useEffect} from 'react';
 import Header from './components/header/Header.tsx';
-import Code from './components/code/Code.tsx';
 import NotificationViewer from './components/notificationViewer/NotificationViewer.tsx';
 import {useAppContext} from './utils/context.tsx';
+import Grid from './components/grid/Grid.tsx';
 
 export default function App() {
     const {appData, setAppData, config} = useAppContext();
@@ -45,11 +45,13 @@ export default function App() {
         });
     }, []);
 
+    console.log('appData:', appData);
+
     return (
         <>
             <Header user={config.user} />
             <NotificationViewer errors={appData.errors} notifications={appData.notifications} />
-            <Code data={appData} />
+            <Grid accId={0} appData={appData} setAppData={setAppData} />
         </>
     );
 }
