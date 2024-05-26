@@ -23,9 +23,6 @@ export class AccountStateData implements IAccountStateData {
     public version = 0;
 
     constructor(public accounts: IAccountData[] = []) {
-        if (!accounts.length) {
-            this.fillEmptyAccounts();
-        }
     }
 
     public getColumns(): Column[] {
@@ -50,6 +47,10 @@ export class AccountStateData implements IAccountStateData {
 
     public getRows(accId: number = 0) {
         const acc = this.accounts[accId];
+        if (!acc) {
+            return [];
+        }
+
         return [
             headerRow,
             ...acc.records?.map((val, idx) => {
@@ -95,25 +96,5 @@ export class AccountStateData implements IAccountStateData {
 
     public toJSON(): string {
         return JSON.stringify({...this});
-    }
-
-    private fillEmptyAccounts() {
-        const emptyAcc: IAccountData = {
-            id: 0,
-            name: 'Empty account',
-            records: [],
-        };
-        this.accounts.push(emptyAcc);
-
-        for (let i = 0; i < 5; ++i) {
-            emptyAcc.records.push({
-                id: i,
-                name: `Empty record ${i}`,
-                value: {
-                    amount: 0,
-                    currency: 'RUB',
-                },
-            });
-        }
     }
 }

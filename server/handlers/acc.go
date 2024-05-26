@@ -3,6 +3,7 @@ package handlers
 import (
 	"errors"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson"
@@ -53,10 +54,27 @@ func GetData(c *gin.Context) {
 	result := mongoCollection.FindOne(dbCtx, filter)
 
 	var data AccountsData
-	if err := result.Decode(&data); err != nil {
-		if !errors.Is(err, mongo.ErrNoDocuments) {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-			return
+	docErr := result.Decode(&data)
+	if docErr != nil && !errors.Is(docErr, mongo.ErrNoDocuments) {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": docErr.Error()})
+		return
+	} else if errors.Is(docErr, mongo.ErrNoDocuments) {
+		for accId := 0; accId < 3; accId++ {
+			accountData := AccountData{
+				Id:      accId,
+				Name:    "Account " + strconv.Itoa(accId),
+				Records: []AccountDataRecord{},
+			}
+
+			for recId := 0; recId < 5; recId++ {
+				accountData.Records = append(accountData.Records, AccountDataRecord{
+					Id:    recId,
+					Name:  "Record " + strconv.Itoa(recId),
+					Value: MoneyValue{Amount: 0, Currency: "RUB"},
+				})
+			}
+
+			data.Accounts = append(data.Accounts, accountData)
 		}
 	}
 
