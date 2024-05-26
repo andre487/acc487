@@ -17,10 +17,17 @@ export interface IAccountData {
     records: IAccountRecord[];
 }
 
-export interface IAccountStateData {
+export interface IAccountStatePureData {
     accounts: IAccountData[];
+}
+
+
+export interface IAccountStateData extends IAccountStatePureData {
+    version: number;
 
     getColumns: () => Column[];
     getRows: () => Row[];
     applyChanges: (accId: number, changes: CellChange<DefaultCellTypes>[]) => IAccountStateData;
+
+    toJSON(): string;
 }

@@ -26,7 +26,9 @@ export default function Grid(props: GridProps) {
             <ReactGrid
                 rows={accData.getRows(accId)}
                 columns={accData.getColumns()}
-                onCellsChanged={handleChanges} />
+                onCellsChanged={handleChanges}
+                enableRangeSelection={true}
+                enableColumnSelection={true} />
         </div>
     );
 }

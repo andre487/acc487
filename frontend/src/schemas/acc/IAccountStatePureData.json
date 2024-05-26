@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "IAccountData": {
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "records": {
+                    "items": {
+                        "$ref": "#/definitions/IAccountRecord"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "records"
+            ],
+            "type": "object"
+        },
+        "IAccountRecord": {
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "$ref": "#/definitions/IMoneyValue"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "value"
+            ],
+            "type": "object"
+        },
+        "IMoneyValue": {
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "amount",
+                "currency"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "accounts": {
+            "items": {
+                "$ref": "#/definitions/IAccountData"
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "accounts"
+    ],
+    "type": "object"
+}
+

@@ -1,5 +1,7 @@
 import {Column, Row, CellChange, DefaultCellTypes, TextCell, NumberCell} from '@silevis/reactgrid';
 import {IAccountStateData, IAccountData} from '../types/acc.ts';
+import '../schemas/acc/validators.ts'
+import {validateAccountStatePureData} from '../schemas/acc/validators.ts';
 
 const headerRow: Row = {
     rowId: 'header',
@@ -7,15 +9,20 @@ const headerRow: Row = {
         {type: 'header', text: 'Name'},
         {type: 'header', text: 'Value'},
         {type: 'header', text: 'Currency'},
-    ]
+    ],
 };
 
 export class AccountStateData implements IAccountStateData {
+    public static fromJson(data: unknown): IAccountStateData {
+        if (!validateAccountStatePureData(data)) {
+            throw new Error('Invalid account state data');
+        }
+        return new AccountStateData(data.accounts);
+    }
+
     public version = 0;
 
-    constructor(
-        public accounts: IAccountData[] = [],
-    ) {
+    constructor(public accounts: IAccountData[] = []) {
         if (!accounts.length) {
             this.fillEmptyAccounts();
         }
@@ -37,7 +44,7 @@ export class AccountStateData implements IAccountStateData {
                 columnId: 2,
                 width: 100,
                 resizable: true,
-            }
+            },
         ];
     }
 
@@ -54,12 +61,12 @@ export class AccountStateData implements IAccountStateData {
                         {type: 'text', text: val.value.currency},
                     ],
                 } as Row;
-            })
+            }),
         ];
     }
 
     public applyChanges(accId: number, changes: CellChange<DefaultCellTypes>[]) {
-        let acc = this.accounts[accId] ??  {
+        let acc = this.accounts[accId] ?? {
             id: 0,
             name: 'Empty account',
             records: [],
@@ -84,6 +91,10 @@ export class AccountStateData implements IAccountStateData {
 
         ++this.version;
         return this;
+    }
+
+    public toJSON(): string {
+        return JSON.stringify({...this});
     }
 
     private fillEmptyAccounts() {

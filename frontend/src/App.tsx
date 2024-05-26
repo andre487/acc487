@@ -3,10 +3,12 @@ import Header from './components/header/Header.tsx';
 import NotificationViewer from './components/notificationViewer/NotificationViewer.tsx';
 import {useAppContext} from './utils/context.tsx';
 import Grid from './components/grid/Grid.tsx';
+import {AccountStateData} from './models/acc.ts';
 
 export default function App() {
     const {appData, setAppData, config} = useAppContext();
 
+    // Set errors listeners
     useEffect(() => {
         const onError = (event: ErrorEvent) => {
             appData.errors = (appData.errors ?? []).slice(0, 4);
@@ -33,17 +35,55 @@ export default function App() {
         };
     }, []);
 
+    // Get accounts data
     useEffect(() => {
-        const url = `${config.apiBaseUrl}/test-data`;
-        fetch(url, {credentials: 'include'}).then(resp => {
+        const url = `${config.apiBaseUrl}/api/accounts/get-data`;
+        const abortController = new AbortController();
+
+        fetch(url, {
+            method: 'POST',
+            credentials: 'include',
+            signal: abortController.signal,
+        }).then(resp => {
             return resp.json();
         }).then(data => {
-            const newAppData = {...appData, appData: data};
-            setAppData(newAppData);
+            setAppData({
+                ...appData,
+                accData: AccountStateData.fromJson(data.data),
+            });
         }).catch(err => {
-            console.error(err);
+            if (err.name == 'AbortError') {
+                console.log(err.message);
+            } else {
+                throw err;
+            }
         });
+
+        return () => {
+            abortController.abort({name: 'AbortError', message: 'GetData called twice'});
+        };
     }, []);
+
+    // Send accounts data
+    useEffect(() => {
+        if (!appData.accData?.version) {
+            return;
+        }
+
+        const url = `${config.apiBaseUrl}/api/accounts/set-data`;
+        fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: appData.accData.toJSON(),
+            credentials: 'include',
+        }).then(resp => {
+            return resp.json();
+        }).then(data => {
+            if (data.status !== 'OK') {
+                throw new Error(`Status is not OK: ${data.status}`);
+            }
+        });
+    }, [appData.accData?.version]);
 
     console.log('appData:', appData);
 
