@@ -20,11 +20,13 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s\t%(mes
 
 
 @task
-def build_frontend(c):
+def build_frontend(c, production=False):
     with c.cd(FRONTEND_DIR):
-        if not os.path.exists('node_modules'):
-            c.run('pnpm install')
-        c.run('pnpm run build')
+        c.run('pnpm install', pty=True)
+        c.run('pnpm run build', env={
+            'NODE_ENV': 'production' if production else 'development',
+            **os.environ,
+        }, pty=True)
 
 
 @task
@@ -53,7 +55,14 @@ def run_dev(c):
         })
 
     def run_frontend():
-        sp.check_call(['pnpm', 'run', 'build:watch'], cwd=FRONTEND_DIR)
+        sp.check_call(
+            ['pnpm', 'run', 'build:watch'],
+            cwd=FRONTEND_DIR,
+            env={
+                'NODE_ENV': 'development',
+                **os.environ,
+            }
+        )
 
     with ThreadPoolExecutor(max_workers=2) as pool:
         pool.submit(run_server)

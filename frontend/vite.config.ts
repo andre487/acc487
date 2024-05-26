@@ -15,6 +15,7 @@ export default defineConfig({
         assetsDir: '.',
         emptyOutDir: true,
         ssrEmitAssets: true,
+        minify: process.env.NODE_ENV !== 'development',
         rollupOptions: {
             input: path.join(__dirname, 'index.html'),
             plugins: [nodeResolve(), commonjs()],

@@ -11,12 +11,7 @@ var _AssetsTemplatesa4103959677b78f4ee01e99796befc67e84087e6 = "{{ define \"base
 
 // AssetsTemplates returns go-assets FileSystem
 var AssetsTemplates = assets.NewFileSystem(map[string][]string{"/": []string{"index.tmpl", "base.tmpl"}}, map[string]*assets.File{
-	"/": &assets.File{
-		Path:     "/",
-		FileMode: 0x800001ed,
-		Mtime:    time.Unix(1716666624, 1716666624828903641),
-		Data:     nil,
-	}, "/index.tmpl": &assets.File{
+	"/index.tmpl": &assets.File{
 		Path:     "/index.tmpl",
 		FileMode: 0x1a4,
 		Mtime:    time.Unix(1716666083, 1716666083618041175),
@@ -26,4 +21,9 @@ var AssetsTemplates = assets.NewFileSystem(map[string][]string{"/": []string{"in
 		FileMode: 0x1a4,
 		Mtime:    time.Unix(1716660666, 1716660666715451119),
 		Data:     []byte(_AssetsTemplatesa4103959677b78f4ee01e99796befc67e84087e6),
+	}, "/": &assets.File{
+		Path:     "/",
+		FileMode: 0x800001ed,
+		Mtime:    time.Unix(1716666624, 1716666624828903641),
+		Data:     nil,
 	}}, "")
