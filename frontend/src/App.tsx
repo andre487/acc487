@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import Header from './components/header/Header.tsx';
 import Code from './components/code/Code.tsx';
-import NotificationViewer from './components/notification-viewer/NotificationViewer.tsx';
+import NotificationViewer from './components/notificationViewer/NotificationViewer.tsx';
 import {useAppContext} from './utils/context.tsx';
 
 export default function App() {
