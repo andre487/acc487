@@ -1,4 +1,4 @@
-import './Header.css';
+import cn from './Header.module.scss';
 import Link from '../link/Link.tsx';
 
 export interface HeaderProps {
@@ -7,13 +7,12 @@ export interface HeaderProps {
 
 export default function Header(props: HeaderProps) {
     return (
-        <header className="header">
+        <header className={cn.header}>
             <Link
-                className="header__home-link"
                 href="/"
                 theme="white">ACC 487</Link>
 
-            <div className="header__user">{props.user}</div>
+            <div>{props.user}</div>
         </header>
     );
 }

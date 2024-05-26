@@ -1,6 +1,6 @@
 import React from 'react';
 import { ClickableComponentProps } from '../components-common-types.ts';
-import './Link.css';
+import cn from './Link.module.scss';
 
 interface LinkProps extends ClickableComponentProps {
     href?: string;
@@ -9,9 +9,14 @@ interface LinkProps extends ClickableComponentProps {
 }
 
 export default function Link(props: React.PropsWithChildren<LinkProps>) {
-    let className = 'link' + (props.className ? ` ${props.className}` : '');
+    let className = cn.link + (props.className ? ` ${props.className}` : '');
     if (props.theme) {
-        className += ` link_theme_${props.theme}`;
+        const propName = `link_theme_${props.theme}`;
+        if (cn[propName]) {
+            className += ` ${cn[propName]}`;
+        } else {
+            console.error('Link theme not found:', props.theme);
+        }
     }
 
     return (

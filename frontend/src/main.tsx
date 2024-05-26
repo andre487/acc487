@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import {AppContextProvider} from './utils/context.tsx';
 import {WindowWithConfig, ROGlobalConfig} from './types.ts';
-import './main.css';
+import './main.scss';
 
 const rootNode = document.getElementById('root');
 if (rootNode) {

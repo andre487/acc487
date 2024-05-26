@@ -1,4 +1,4 @@
-.notification-viewer {
+.notificationViewer {
     display: flex;
     flex-direction: column;
 
@@ -7,7 +7,7 @@
     right: 10px;
 }
 
-.notification-viewer__message {
+.notificationViewer__message {
     padding: 10px;
     background: var(--purple-800);
     color: var(--white);
@@ -15,10 +15,13 @@
     overflow: hidden;
 }
 
-.notification-viewer__message + .notification-viewer__message {
+.notificationViewer__message + .notificationViewer__message {
     margin-top: 10px;
 }
 
-.notification-viewer__message_type_error {
+.notificationViewer__message_type_error {
     background: var(--red-800);
+}
+
+.notificationViewer__message_type_info {
 }
