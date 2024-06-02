@@ -4,45 +4,21 @@ import NotificationViewer from './components/notificationViewer/NotificationView
 import Grid from './components/grid/Grid.tsx';
 import {AccountStateData} from './models/acc.ts';
 import {useAppContext} from './utils/context-funcs.ts';
+import ErrorListener from './components/errorListener/ErrorListener.tsx';
 
 export default function App() {
     const {
         appData,
-        setAppData,
         accPureData,
         setAccPureData,
+        errors,
         config,
     } = useAppContext();
 
-    // Set errors listeners
-    useEffect(() => {
-        const onError = (event: ErrorEvent) => {
-            appData.errors = (appData.errors ?? []).slice(0, 4);
-            appData.errors.splice(0, 0, event.error);
-            setAppData({...appData});
-        };
-
-        const onPromiseRejected = (event: PromiseRejectionEvent) => {
-            appData.errors = (appData.errors ?? []).slice(0, 4);
-            let reason: unknown = event.reason;
-            if (!(reason instanceof Error)) {
-                reason = new Error(String(reason));
-            }
-            appData.errors.splice(0, 0, reason as Error);
-            setAppData({...appData});
-        };
-
-        window.addEventListener('error', onError);
-        window.addEventListener('unhandledrejection', onPromiseRejected);
-
-        return () => {
-            window.removeEventListener('error', onError);
-            window.removeEventListener('unhandledrejection', onPromiseRejected);
-        };
-    }, []);
-
     // Get accounts data
     useEffect(() => {
+        console.log('Get accounts data');
+
         const url = `${config.apiBaseUrl}/api/accounts/get-data`;
         const abortController = new AbortController();
 
@@ -73,6 +49,8 @@ export default function App() {
             return;
         }
 
+        console.log('Send accounts data');
+
         const accData = new AccountStateData(accPureData.accounts, accPureData.version);
         const url = `${config.apiBaseUrl}/api/accounts/set-data`;
         const abortController = new AbortController();
@@ -92,12 +70,13 @@ export default function App() {
         return () => {
             abortController.abort({name: 'AbortError', message: 'SetData called twice'});
         };
-    }, [accPureData.version]);
+    }, [accPureData]);
 
     return (
         <>
+            <ErrorListener />
             <Header user={config.user} />
-            <NotificationViewer errors={appData.errors} notifications={appData.notifications} />
+            <NotificationViewer errors={errors} notifications={appData.notifications} />
             <Grid accId={0} accPureData={accPureData} setAccPureData={setAccPureData} />
         </>
     );
