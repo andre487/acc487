@@ -47,7 +47,7 @@ importers:
         version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.11(@typings/node@20.12.8)(sass@1.77.1))
+        version: 4.2.1(vite@5.2.11(@types/node@20.12.8)(sass@1.77.1))
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -65,7 +65,10 @@ importers:
         version: 4.0.9(postcss@8.4.38)
       react-select:
         specifier: ^5.8.0
-        version: 5.8.0(@typings/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.8.0(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      rollup-plugin-typescript-paths:
+        specifier: ^1.5.0
+        version: 1.5.0(typescript@5.4.5)
       sass:
         specifier: ^1.77.1
         version: 1.77.1
@@ -83,7 +86,7 @@ importers:
         version: 0.63.0
       vite:
         specifier: ^5.2.0
-        version: 5.2.11(@typings/node@20.12.8)(sass@1.77.1)
+        version: 5.2.11(@types/node@20.12.8)(sass@1.77.1)
 
 packages:
 
@@ -1374,6 +1377,11 @@ packages:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==, tarball: https://npm.yandex-team.ru/rimraf/-/rimraf-3.0.2.tgz?rbtorrent=e56d76da53e035fd23b4819f6bdcbe4abc4e2961}
     hasBin: true
 
+  rollup-plugin-typescript-paths@1.5.0:
+    resolution: {integrity: sha512-zly2aiGNjYJNq5YUi6eyGrQnCYUQ8b5czOtHZIGriwG9U3Ba2F9hlSklafXCdsNulK/IlNmE0Kzj0h+fVV32pA==, tarball: https://npm.yandex-team.ru/rollup-plugin-typescript-paths/-/rollup-plugin-typescript-paths-1.5.0.tgz?rbtorrent=}
+    peerDependencies:
+      typescript: '>=3.4'
+
   rollup@4.17.2:
     resolution: {integrity: sha512-/9ClTJPByC0U4zNLowV1tMBe8yMEAxewtR3cUNX5BoEpGH3dQEWpJLr6CLp0fPdYRF/fzVOgvDb1zXuakwF5kQ==, tarball: https://npm.yandex-team.ru/rollup/-/rollup-4.17.2.tgz?rbtorrent=}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -2226,7 +2234,7 @@ snapshots:
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.11(@typings/node@20.12.8)(sass@1.77.1)
+      vite: 5.2.11(@types/node@20.12.8)(sass@1.77.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2853,7 +2861,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.5
       '@emotion/cache': 11.11.0
-      '@emotion/react': 11.11.4(@typings/react@18.3.1)(react@18.3.1)
+      '@emotion/react': 11.11.4(@types/react@18.3.1)(react@18.3.1)
       '@floating-ui/dom': 1.6.5
       '@types/react-transition-group': 4.4.10
       memoize-one: 6.0.0
@@ -2861,9 +2869,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      use-isomorphic-layout-effect: 1.1.2(@typings/react@18.3.1)(react@18.3.1)
+      use-isomorphic-layout-effect: 1.1.2(@types/react@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
-      - '@typings/react'
+      - '@types/react'
 
   react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -2905,6 +2913,10 @@ snapshots:
   rimraf@3.0.2:
     dependencies:
       glob: 7.2.3
+
+  rollup-plugin-typescript-paths@1.5.0(typescript@5.4.5):
+    dependencies:
+      typescript: 5.4.5
 
   rollup@4.17.2:
     dependencies:
@@ -3039,7 +3051,7 @@ snapshots:
       glob: 7.2.3
       path-equal: 1.2.5
       safe-stable-stringify: 2.4.3
-      ts-node: 10.9.2(@typings/node@16.18.97)(typescript@5.1.6)
+      ts-node: 10.9.2(@types/node@16.18.97)(typescript@5.1.6)
       typescript: 5.1.6
       yargs: 17.7.2
     transitivePeerDependencies:

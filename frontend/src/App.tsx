@@ -10,7 +10,9 @@ export default function App() {
         accPureData,
         setAccPureData,
         errors,
+        setErrors,
         notifications,
+        setNotifications,
         config,
     } = useAppContext();
 
@@ -20,7 +22,11 @@ export default function App() {
             <AccDataHandler />
 
             <Header user={config.user} />
-            <NotificationViewer errors={errors} notifications={notifications} />
+            <NotificationViewer
+                errors={errors}
+                setErrors={setErrors}
+                notifications={notifications}
+                setNotifications={setNotifications} />
             <Grid accId={0} accPureData={accPureData} setAccPureData={setAccPureData} />
         </>
     );

@@ -5,6 +5,9 @@ import App from './App.tsx';
 import {AppContextProvider} from './context/AppContextProvider.tsx';
 import {ROGlobalConfig, WindowWithConfig} from './typings/globals.ts';
 
+// TODO: Make it only in Dev mode
+window.React = React;
+
 const rootNode = document.getElementById('root');
 if (rootNode) {
     ReactDOM.createRoot(rootNode).render(
