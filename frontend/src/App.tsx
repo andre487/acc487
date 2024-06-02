@@ -1,9 +1,9 @@
 import {useEffect} from 'react';
 import Header from './components/header/Header.tsx';
 import NotificationViewer from './components/notificationViewer/NotificationViewer.tsx';
-import {useAppContext} from './utils/context.tsx';
 import Grid from './components/grid/Grid.tsx';
 import {AccountStateData} from './models/acc.ts';
+import {useAppContext} from './utils/context-funcs.ts';
 
 export default function App() {
     const {

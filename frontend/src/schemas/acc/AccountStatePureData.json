@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
-        "IAccountData": {
+        "AccountData": {
             "properties": {
                 "id": {
                     "type": "number"
@@ -11,7 +11,7 @@
                 },
                 "records": {
                     "items": {
-                        "$ref": "#/definitions/IAccountRecord"
+                        "$ref": "#/definitions/AccountRecord"
                     },
                     "type": "array"
                 }
@@ -23,7 +23,7 @@
             ],
             "type": "object"
         },
-        "IAccountRecord": {
+        "AccountRecord": {
             "properties": {
                 "id": {
                     "type": "number"
@@ -32,7 +32,7 @@
                     "type": "string"
                 },
                 "value": {
-                    "$ref": "#/definitions/IMoneyValue"
+                    "$ref": "#/definitions/MoneyValue"
                 }
             },
             "required": [
@@ -42,7 +42,7 @@
             ],
             "type": "object"
         },
-        "IMoneyValue": {
+        "MoneyValue": {
             "properties": {
                 "amount": {
                     "type": "number"
@@ -61,9 +61,12 @@
     "properties": {
         "accounts": {
             "items": {
-                "$ref": "#/definitions/IAccountData"
+                "$ref": "#/definitions/AccountData"
             },
             "type": "array"
+        },
+        "version": {
+            "type": "number"
         }
     },
     "required": [

@@ -1,6 +1,6 @@
 import {O} from 'ts-toolbelt';
 import {GlobalConfig} from './globals.ts';
-import {AccountStatePureData} from '../models/acc.ts';
+import {AccountStatePureData} from './acc.ts';
 
 export interface AppData {
     version?: number;

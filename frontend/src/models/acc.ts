@@ -1,28 +1,6 @@
 import {Column, Row, CellChange, DefaultCellTypes, TextCell, NumberCell} from '@silevis/reactgrid';
-import '../schemas/acc/validators.ts';
-import {validateAccountStatePureData} from '../schemas/acc/validators.ts';
-
-export interface MoneyValue {
-    amount: number;
-    currency: string;
-}
-
-export interface AccountRecord {
-    id: number;
-    name: string;
-    value: MoneyValue;
-}
-
-export interface AccountData {
-    id: number;
-    name: string;
-    records: AccountRecord[];
-}
-
-export interface AccountStatePureData {
-    version?: number;
-    accounts: AccountData[];
-}
+import {validateAccountStatePureData} from '../schemas/acc/validators';
+import {AccountStatePureData, AccountData} from '../types/acc';
 
 const headerRow: Row = {
     rowId: 'header',
@@ -72,7 +50,7 @@ export class AccountStateData implements AccountStatePureData {
 
         return [
             headerRow,
-            ...acc.records?.map((val, idx) => {
+            ...(acc.records?.map((val, idx) => {
                 return {
                     rowId: idx,
                     cells: [
@@ -81,12 +59,12 @@ export class AccountStateData implements AccountStatePureData {
                         {type: 'text', text: val.value.currency},
                     ],
                 } as Row;
-            }),
+            }) ?? {}),
         ];
     }
 
     public applyChanges(accId: number, changes: CellChange<DefaultCellTypes>[]) {
-        let acc = this.accounts[accId] ?? {
+        const acc = this.accounts[accId] ?? {
             id: 0,
             name: 'Empty account',
             records: [],
@@ -95,17 +73,17 @@ export class AccountStateData implements AccountStatePureData {
         for (const change of changes) {
             const rowId = Number(change.rowId);
             switch (change.columnId) {
-                case 0:
-                    acc.records[rowId].name = (change.newCell as TextCell).text;
-                    break;
-                case 1:
-                    acc.records[rowId].value.amount = (change.newCell as NumberCell).value;
-                    break;
-                case 2:
-                    acc.records[rowId].value.currency = (change.newCell as TextCell).text;
-                    break;
-                default:
-                    console.error('Grid: unknown columnId:', change.columnId);
+            case 0:
+                acc.records[rowId].name = (change.newCell as TextCell).text;
+                break;
+            case 1:
+                acc.records[rowId].value.amount = (change.newCell as NumberCell).value;
+                break;
+            case 2:
+                acc.records[rowId].value.currency = (change.newCell as TextCell).text;
+                break;
+            default:
+                console.error('Grid: unknown columnId:', change.columnId);
             }
         }
 

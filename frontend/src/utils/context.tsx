@@ -1,9 +1,8 @@
-import React, {useState, useContext} from 'react';
-import {AppDataContext, AppData} from '../types/state.ts';
+import React, {useState} from 'react';
+import {AppData} from '../types/state.ts';
 import {ROGlobalConfig} from '../types/globals.ts';
 import {AccountStatePureData} from '../types/acc.ts';
-
-export const AppContext = React.createContext<AppDataContext | null>(null);
+import {AppContext} from './context-funcs.ts';
 
 export function AppContextProvider({children, value}: React.ProviderProps<ROGlobalConfig>) {
     const [appData, setAppData] = useState<AppData>({});
@@ -19,12 +18,4 @@ export function AppContextProvider({children, value}: React.ProviderProps<ROGlob
             {children}
         </AppContext.Provider>
     );
-}
-
-export function useAppContext() {
-    const context = useContext(AppContext);
-    if (!context) {
-        throw new Error('Use app context within provider!');
-    }
-    return context;
 }

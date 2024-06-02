@@ -1,8 +1,9 @@
 import {ReactGrid, CellChange, DefaultCellTypes} from '@silevis/reactgrid';
 import '@silevis/reactgrid/styles.scss';
 import './Grid.scss';
-import {AccountStateData, AccountStatePureData} from '../../models/acc.ts';
+import {AccountStateData} from '../../models/acc.ts';
 import {AccPureDataSetter} from '../../types/state.ts';
+import {AccountStatePureData} from '../../types/acc.ts';
 
 export interface GridProps {
     accId: number;

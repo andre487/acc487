@@ -12,9 +12,9 @@ function main() {
             --required \
             --strictNullChecks \
             --excludePrivate \
-            --out ${projectRoot}/src/schemas/acc/IAccountStatePureData.json \
-            src/types/acc.ts \
-            IAccountStatePureData`
+            --out ${projectRoot}/src/schemas/acc/AccountStatePureData.json \
+            ${projectRoot}/src/types/acc.ts \
+            AccountStatePureData`
     );
 }
 
