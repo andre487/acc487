@@ -1,23 +1,25 @@
 import {ReactGrid, CellChange, DefaultCellTypes} from '@silevis/reactgrid';
 import '@silevis/reactgrid/styles.scss';
 import './Grid.scss';
-import {AccountStateData} from '../../models/acc.ts';
-import {AppData, AppDataSetter} from '../../types/state.ts';
+import {AccountStateData, AccountStatePureData} from '../../models/acc.ts';
+import {AccPureDataSetter} from '../../types/state.ts';
 
 export interface GridProps {
     accId: number;
-    appData: AppData;
-    setAppData: AppDataSetter;
+    accPureData: AccountStatePureData;
+    setAccPureData: AccPureDataSetter;
 }
 
 export default function Grid(props: GridProps) {
-    const {accId, appData, setAppData} = props;
-    const accData = appData.accData ?? new AccountStateData();
+    const {accId, accPureData, setAccPureData} = props;
+    const accData = new AccountStateData(accPureData.accounts);
 
     const handleChanges = (changes: CellChange<DefaultCellTypes>[]) => {
-        setAppData({
+        const changed = accData.applyChanges(accId, changes);
+        setAccPureData({
             ...accData,
-            accData: accData.applyChanges(accId, changes),
+            accounts: changed.accounts,
+            version: changed.version,
         });
     };
 

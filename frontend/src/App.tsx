@@ -6,7 +6,13 @@ import Grid from './components/grid/Grid.tsx';
 import {AccountStateData} from './models/acc.ts';
 
 export default function App() {
-    const {appData, setAppData, config} = useAppContext();
+    const {
+        appData,
+        setAppData,
+        accPureData,
+        setAccPureData,
+        config,
+    } = useAppContext();
 
     // Set errors listeners
     useEffect(() => {
@@ -47,10 +53,7 @@ export default function App() {
         }).then(resp => {
             return resp.json();
         }).then(data => {
-            setAppData({
-                ...appData,
-                accData: AccountStateData.fromJson(data.data),
-            });
+            setAccPureData(AccountStateData.fromJson(data.data));
         }).catch(err => {
             if (err.name == 'AbortError') {
                 console.log(err.message);
@@ -66,32 +69,36 @@ export default function App() {
 
     // Send accounts data
     useEffect(() => {
-        if (!appData.accData?.version) {
+        if (!accPureData.version) {
             return;
         }
 
+        const accData = new AccountStateData(accPureData.accounts, accPureData.version);
         const url = `${config.apiBaseUrl}/api/accounts/set-data`;
+        const abortController = new AbortController();
+
         fetch(url, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: appData.accData.toJSON(),
+            body: accData.toJSON(),
             credentials: 'include',
-        }).then(resp => {
-            return resp.json();
-        }).then(data => {
+            signal: abortController.signal,
+        }).then(resp => resp.json()).then(data => {
             if (data.status !== 'OK') {
                 throw new Error(`Status is not OK: ${data.status}`);
             }
         });
-    }, [appData.accData?.version]);
 
-    console.log('appData:', appData);
+        return () => {
+            abortController.abort({name: 'AbortError', message: 'SetData called twice'});
+        };
+    }, [accPureData.version]);
 
     return (
         <>
             <Header user={config.user} />
             <NotificationViewer errors={appData.errors} notifications={appData.notifications} />
-            <Grid accId={0} appData={appData} setAppData={setAppData} />
+            <Grid accId={0} accPureData={accPureData} setAccPureData={setAccPureData} />
         </>
     );
 }

@@ -1,7 +1,28 @@
 import {Column, Row, CellChange, DefaultCellTypes, TextCell, NumberCell} from '@silevis/reactgrid';
-import {IAccountStateData, IAccountData} from '../types/acc.ts';
-import '../schemas/acc/validators.ts'
+import '../schemas/acc/validators.ts';
 import {validateAccountStatePureData} from '../schemas/acc/validators.ts';
+
+export interface MoneyValue {
+    amount: number;
+    currency: string;
+}
+
+export interface AccountRecord {
+    id: number;
+    name: string;
+    value: MoneyValue;
+}
+
+export interface AccountData {
+    id: number;
+    name: string;
+    records: AccountRecord[];
+}
+
+export interface AccountStatePureData {
+    version?: number;
+    accounts: AccountData[];
+}
 
 const headerRow: Row = {
     rowId: 'header',
@@ -12,17 +33,15 @@ const headerRow: Row = {
     ],
 };
 
-export class AccountStateData implements IAccountStateData {
-    public static fromJson(data: unknown): IAccountStateData {
+export class AccountStateData implements AccountStatePureData {
+    public static fromJson(data: unknown): AccountStateData {
         if (!validateAccountStatePureData(data)) {
             throw new Error('Invalid account state data');
         }
         return new AccountStateData(data.accounts);
     }
 
-    public version = 0;
-
-    constructor(public accounts: IAccountData[] = []) {
+    constructor(public accounts: AccountData[] = [], public version = 0) {
     }
 
     public getColumns(): Column[] {
