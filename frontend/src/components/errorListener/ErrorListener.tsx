@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {useAppContext} from '../../context/appContext.ts';
+import {useAppContext} from '@context/appContext.ts';
 
 export default function ErrorListener() {
     const {

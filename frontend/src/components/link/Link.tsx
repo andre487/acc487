@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClickableComponentProps } from '../components-common-types.ts';
+import { ClickableComponentProps } from '@typings/components.ts';
 import cn from './Link.module.scss';
 
 interface LinkProps extends ClickableComponentProps {

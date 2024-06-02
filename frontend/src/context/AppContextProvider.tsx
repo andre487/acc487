@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {ROGlobalConfig} from '../types/globals.ts';
-import {AccountStatePureData} from '../types/acc.ts';
+import {ROGlobalConfig} from '../typings/globals.ts';
+import {AccountStatePureData} from '../typings/acc.ts';
 import {AppContext} from './appContext.ts';
 
 export function AppContextProvider({children, value}: React.ProviderProps<ROGlobalConfig>) {

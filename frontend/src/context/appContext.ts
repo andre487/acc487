@@ -1,7 +1,7 @@
 import React, {useContext, Dispatch, SetStateAction} from 'react';
 import {O} from 'ts-toolbelt';
-import {GlobalConfig} from '../types/globals.ts';
-import {AccountStatePureData} from '../types/acc.ts';
+import {GlobalConfig} from '../typings/globals.ts';
+import {AccountStatePureData} from '../typings/acc.ts';
 
 export type AccPureDataSetter = Dispatch<SetStateAction<AccountStatePureData>>;
 export type ErrorsSetter = Dispatch<SetStateAction<Error[]>>;

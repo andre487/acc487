@@ -1,6 +1,6 @@
-import {useAppContext} from '../../context/appContext.ts';
 import {useEffect} from 'react';
-import {AccountStateData} from '../../models/acc.ts';
+import {useAppContext} from '@context/appContext.ts';
+import {AccountStateData} from '@models/acc.ts';
 
 export default function AccDataHandler() {
     const {

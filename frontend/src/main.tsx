@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import {AppContextProvider} from './context/AppContextProvider.tsx';
-import {ROGlobalConfig, WindowWithConfig} from './types/globals.ts';
+import {ROGlobalConfig, WindowWithConfig} from './typings/globals.ts';
 
 const rootNode = document.getElementById('root');
 if (rootNode) {

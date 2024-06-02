@@ -1,5 +1,5 @@
 import cn from './Header.module.scss';
-import Link from '../link/Link.tsx';
+import Link from '@components/link/Link.tsx';
 
 export interface HeaderProps {
     user: string;

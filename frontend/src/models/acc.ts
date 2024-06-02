@@ -1,6 +1,6 @@
 import {Column, Row, CellChange, DefaultCellTypes, TextCell, NumberCell} from '@silevis/reactgrid';
 import {validateAccountStatePureData} from '../schemas/acc/validators';
-import {AccountStatePureData, AccountData} from '../types/acc';
+import {AccountStatePureData, AccountData} from '../typings/acc';
 
 const headerRow: Row = {
     rowId: 'header',

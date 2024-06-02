@@ -1,6 +1,6 @@
 import accountPureDataSchema from './AccountStatePureData.json';
 import Ajv from 'ajv';
-import {AccountStatePureData} from '../../types/acc.ts';
+import {AccountStatePureData} from '@typings/acc.ts';
 
 const ajv = new Ajv();
 const iAccountStatePureDataSchemaValidator = ajv.compile(accountPureDataSchema);

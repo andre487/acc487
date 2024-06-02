@@ -47,7 +47,7 @@ importers:
         version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.11(@types/node@20.12.8)(sass@1.77.1))
+        version: 4.2.1(vite@5.2.11(@typings/node@20.12.8)(sass@1.77.1))
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -65,7 +65,7 @@ importers:
         version: 4.0.9(postcss@8.4.38)
       react-select:
         specifier: ^5.8.0
-        version: 5.8.0(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 5.8.0(@typings/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sass:
         specifier: ^1.77.1
         version: 1.77.1
@@ -83,7 +83,7 @@ importers:
         version: 0.63.0
       vite:
         specifier: ^5.2.0
-        version: 5.2.11(@types/node@20.12.8)(sass@1.77.1)
+        version: 5.2.11(@typings/node@20.12.8)(sass@1.77.1)
 
 packages:
 
@@ -2226,7 +2226,7 @@ snapshots:
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.11(@types/node@20.12.8)(sass@1.77.1)
+      vite: 5.2.11(@typings/node@20.12.8)(sass@1.77.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2853,7 +2853,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.5
       '@emotion/cache': 11.11.0
-      '@emotion/react': 11.11.4(@types/react@18.3.1)(react@18.3.1)
+      '@emotion/react': 11.11.4(@typings/react@18.3.1)(react@18.3.1)
       '@floating-ui/dom': 1.6.5
       '@types/react-transition-group': 4.4.10
       memoize-one: 6.0.0
@@ -2861,9 +2861,9 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-transition-group: 4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      use-isomorphic-layout-effect: 1.1.2(@types/react@18.3.1)(react@18.3.1)
+      use-isomorphic-layout-effect: 1.1.2(@typings/react@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
-      - '@types/react'
+      - '@typings/react'
 
   react-transition-group@4.4.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -3039,7 +3039,7 @@ snapshots:
       glob: 7.2.3
       path-equal: 1.2.5
       safe-stable-stringify: 2.4.3
-      ts-node: 10.9.2(@types/node@16.18.97)(typescript@5.1.6)
+      ts-node: 10.9.2(@typings/node@16.18.97)(typescript@5.1.6)
       typescript: 5.1.6
       yargs: 17.7.2
     transitivePeerDependencies:
