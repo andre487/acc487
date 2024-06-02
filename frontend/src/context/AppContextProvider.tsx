@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ROGlobalConfig} from '../types/globals.ts';
 import {AccountStatePureData} from '../types/acc.ts';
-import {AppContext} from './context-funcs.ts';
+import {AppContext} from './appContext.ts';
 
 export function AppContextProvider({children, value}: React.ProviderProps<ROGlobalConfig>) {
     const [accPureData, setAccPureData] = useState<AccountStatePureData>({accounts: []});

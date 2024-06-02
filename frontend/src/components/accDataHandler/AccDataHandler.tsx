@@ -1,4 +1,4 @@
-import {useAppContext} from '../../utils/context-funcs.ts';
+import {useAppContext} from '../../context/appContext.ts';
 import {useEffect} from 'react';
 import {AccountStateData} from '../../models/acc.ts';
 

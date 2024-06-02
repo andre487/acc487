@@ -1,7 +1,7 @@
 import Header from './components/header/Header.tsx';
 import NotificationViewer from './components/notificationViewer/NotificationViewer.tsx';
 import Grid from './components/grid/Grid.tsx';
-import {useAppContext} from './utils/context-funcs.ts';
+import {useAppContext} from './context/appContext.ts';
 import ErrorListener from './components/errorListener/ErrorListener.tsx';
 import AccDataHandler from './components/accDataHandler/AccDataHandler.tsx';
 
