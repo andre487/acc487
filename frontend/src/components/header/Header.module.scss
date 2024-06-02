@@ -1,0 +1,12 @@
+@import '../../colors.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    color: $color-white;
+    background-color: $color-red-900;
+    font-weight: bolder;
+}

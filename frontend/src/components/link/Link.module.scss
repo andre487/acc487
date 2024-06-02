@@ -1,0 +1,17 @@
+@import '../../colors.scss';
+
+.link {
+    color: $color-purple-a700;
+}
+
+.link:hover {
+    color: $color-purple-800;
+}
+
+.link.link_theme_white {
+    color: $color-white;
+}
+
+.link.link_theme_white:hover {
+    color: $color-red-50;
+}

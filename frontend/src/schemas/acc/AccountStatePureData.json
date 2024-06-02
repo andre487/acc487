@@ -1,0 +1,77 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "AccountData": {
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "records": {
+                    "items": {
+                        "$ref": "#/definitions/AccountRecord"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "records"
+            ],
+            "type": "object"
+        },
+        "AccountRecord": {
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "$ref": "#/definitions/MoneyValue"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "value"
+            ],
+            "type": "object"
+        },
+        "MoneyValue": {
+            "properties": {
+                "amount": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "amount",
+                "currency"
+            ],
+            "type": "object"
+        }
+    },
+    "properties": {
+        "accounts": {
+            "items": {
+                "$ref": "#/definitions/AccountData"
+            },
+            "type": "array"
+        },
+        "version": {
+            "type": "number"
+        }
+    },
+    "required": [
+        "accounts"
+    ],
+    "type": "object"
+}
+

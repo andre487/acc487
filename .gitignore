@@ -7,6 +7,8 @@
 *.dll
 *.so
 *.dylib
+out
+assets
 
 # Test binary, built with `go test -c`
 *.test
@@ -19,3 +21,7 @@
 
 # Go workspace file
 go.work
+
+# Idea
+.idea
+*.iml

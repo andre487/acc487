@@ -1,0 +1,11 @@
+{{ define "base" }}
+    <!DOCTYPE html>
+    <meta charset="utf8">
+
+    <title>{{ .Title }}</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ template "head" .}}
+
+    <main class="content">{{ template "main" . }}</main>
+{{ end }}

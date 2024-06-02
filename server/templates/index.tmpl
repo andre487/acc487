@@ -1,0 +1,19 @@
+{{ template "index" }}
+
+{{ define "head" }}
+    {{ $assetData := ViteAsset "index.html" }}
+    {{ range $val := $assetData.Css }}
+        <link rel="stylesheet" href="{{ $val }}">
+    {{ end }}
+{{ end }}
+
+{{ define "main" }}
+    {{ $assetData := ViteAsset "index.html" }}
+    <div id="root"></div>
+    <script>
+        window.config = {{ .config | JsonEncode }};
+    </script>
+    {{ if $assetData.Js }}
+        <script type="module" src="{{ $assetData.Js }}"></script>
+    {{ end }}
+{{ end }}
