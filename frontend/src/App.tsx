@@ -8,10 +8,10 @@ import ErrorListener from './components/errorListener/ErrorListener.tsx';
 
 export default function App() {
     const {
-        appData,
         accPureData,
         setAccPureData,
         errors,
+        notifications,
         config,
     } = useAppContext();
 
@@ -41,7 +41,7 @@ export default function App() {
         return () => {
             abortController.abort({name: 'AbortError', message: 'GetData called twice'});
         };
-    }, []);
+    }, [config.apiBaseUrl, setAccPureData]);
 
     // Send accounts data
     useEffect(() => {
@@ -70,13 +70,13 @@ export default function App() {
         return () => {
             abortController.abort({name: 'AbortError', message: 'SetData called twice'});
         };
-    }, [accPureData]);
+    }, [accPureData, config.apiBaseUrl]);
 
     return (
         <>
             <ErrorListener />
             <Header user={config.user} />
-            <NotificationViewer errors={errors} notifications={appData.notifications} />
+            <NotificationViewer errors={errors} notifications={notifications} />
             <Grid accId={0} accPureData={accPureData} setAccPureData={setAccPureData} />
         </>
     );

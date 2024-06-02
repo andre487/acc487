@@ -37,4 +37,4 @@ export default function ErrorListener() {
     }, [errors, setErrors]);
 
     return <></>;
-};
+}
