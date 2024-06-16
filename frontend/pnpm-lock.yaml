@@ -8,18 +8,30 @@ importers:
 
   .:
     dependencies:
+      '@handsontable/react':
+        specifier: ^14.3.0
+        version: 14.3.0(handsontable@14.3.0)
       '@silevis/reactgrid':
         specifier: ^4.1.6
         version: 4.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ajv:
         specifier: ^8.13.0
         version: 8.13.0
+      handsontable:
+        specifier: ^14.3.0
+        version: 14.3.0
+      hyperformula:
+        specifier: ^2.7.0
+        version: 2.7.0
       react:
         specifier: ^18.2.0
         version: 18.3.1
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      throw:
+        specifier: ^1.1.1
+        version: 1.1.1
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^25.0.7
@@ -411,6 +423,14 @@ packages:
   '@floating-ui/utils@0.2.2':
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==, tarball: https://npm.yandex-team.ru/@floating-ui%2futils/-/utils-0.2.2.tgz?rbtorrent=}
 
+  '@handsontable/pikaday@1.0.0':
+    resolution: {integrity: sha512-1VN6N38t5/DcjJ7y7XUYrDx1LuzvvzlrFdBdMG90Qo1xc8+LXHqbWbsTEm5Ec5gXTEbDEO53vUT35R+2COmOyg==, tarball: https://npm.yandex-team.ru/@handsontable%2fpikaday/-/pikaday-1.0.0.tgz?rbtorrent=}
+
+  '@handsontable/react@14.3.0':
+    resolution: {integrity: sha512-0m2cgJDsm8dcaETlYIgltiL33syU2817I5G7iOnf921IOv2IkrnoWuit5CLZLXAadS6tHscjsML8Cj2G//IgeA==, tarball: https://npm.yandex-team.ru/@handsontable%2freact/-/react-14.3.0.tgz?rbtorrent=}
+    peerDependencies:
+      handsontable: '>=14.0.0'
+
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==, tarball: https://npm.yandex-team.ru/@humanwhocodes%2fconfig-array/-/config-array-0.11.14.tgz?rbtorrent=}
     engines: {node: '>=10.10.0'}
@@ -622,6 +642,9 @@ packages:
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==, tarball: https://npm.yandex-team.ru/@types%2fparse-json/-/parse-json-4.0.2.tgz?rbtorrent=3760f03dc90418c538667bc7bf23628697ff32c3}
 
+  '@types/pikaday@1.7.4':
+    resolution: {integrity: sha512-0KsHVyw5pTG829nqG4IRu7m+BFQlFEBdbE/1i3S5182HeKUKv1uEW0gyEmkJVp5i4IV+9pyh23O83+KpRkSQbw==, tarball: https://npm.yandex-team.ru/@types%2fpikaday/-/pikaday-1.7.4.tgz?rbtorrent=4997ab914219964730a5f744fd960e847b6673c4}
+
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==, tarball: https://npm.yandex-team.ru/@types%2fprop-types/-/prop-types-15.7.12.tgz?rbtorrent=}
 
@@ -763,6 +786,9 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==, tarball: https://npm.yandex-team.ru/balanced-match/-/balanced-match-1.0.2.tgz?rbtorrent=b5770b454c205809e4f85bb2e3b838b3c634d90b}
 
+  bignumber.js@8.1.1:
+    resolution: {integrity: sha512-QD46ppGintwPGuL1KqmwhR0O+N2cZUg8JG/VzwI2e28sM9TqHjQB10lI4QAaMHVbLzwVLLAwEglpKPViWX+5NQ==, tarball: https://npm.yandex-team.ru/bignumber.js/-/bignumber.js-8.1.1.tgz?rbtorrent=46a5fc7152802637b9f466eea51754f3b4d09798}
+
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==, tarball: https://npm.yandex-team.ru/binary-extensions/-/binary-extensions-2.3.0.tgz?rbtorrent=}
     engines: {node: '>=8'}
@@ -801,6 +827,9 @@ packages:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==, tarball: https://npm.yandex-team.ru/chalk/-/chalk-4.1.2.tgz?rbtorrent=c439e9071a40e546e84d959fa7090597ededbce4}
     engines: {node: '>=10'}
 
+  chevrotain@6.5.0:
+    resolution: {integrity: sha512-BwqQ/AgmKJ8jcMEjaSnfMybnKMgGTrtDKowfTP3pX4jwVy0kNjRsT/AP6h+wC3+3NC+X8X15VWBnTCQlX+wQFg==, tarball: https://npm.yandex-team.ru/chevrotain/-/chevrotain-6.5.0.tgz?rbtorrent=3c2a9b8e7390db8f38b57e835e90c9edf7c0c197}
+
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==, tarball: https://npm.yandex-team.ru/chokidar/-/chokidar-3.6.0.tgz?rbtorrent=}
     engines: {node: '>= 8.10.0'}
@@ -833,6 +862,9 @@ packages:
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==, tarball: https://npm.yandex-team.ru/convert-source-map/-/convert-source-map-2.0.0.tgz?rbtorrent=8d247ba4886ecef994137a086a4d9817b81854db}
+
+  core-js@3.37.1:
+    resolution: {integrity: sha512-Xn6qmxrQZyB0FFY8E3bgRXei3lWDJHhvI+u0q9TKIYM49G8pAr0FgnnrFRAmsbptZL1yxRADVXn+x5AGsbBfyw==, tarball: https://npm.yandex-team.ru/core-js/-/core-js-3.37.1.tgz?rbtorrent=}
 
   cosmiconfig@7.1.0:
     resolution: {integrity: sha512-AdmX6xUzdNASswsFtmwSt7Vj8po9IuqXm0UXz7QKPuEUmPB4XyjGfaAr2PSuELMwkRMVH1EpIkX5bTZGRB3eCA==, tarball: https://npm.yandex-team.ru/cosmiconfig/-/cosmiconfig-7.1.0.tgz?rbtorrent=56fa9638f1d1ef391e5ab64d653b5af9a7398a38}
@@ -878,6 +910,9 @@ packages:
 
   dom-helpers@5.2.1:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==, tarball: https://npm.yandex-team.ru/dom-helpers/-/dom-helpers-5.2.1.tgz?rbtorrent=12957d8d7edeb466542bcf9b5e2c407f1048396f}
+
+  dompurify@2.5.5:
+    resolution: {integrity: sha512-FgbqnEPiv5Vdtwt6Mxl7XSylttCC03cqP5ldNT2z+Kj0nLxPHJH4+1Cyf5Jasxhw93Rl4Oo11qRoUV72fmya2Q==, tarball: https://npm.yandex-team.ru/dompurify/-/dompurify-2.5.5.tgz?rbtorrent=}
 
   electron-to-chromium@1.4.756:
     resolution: {integrity: sha512-RJKZ9+vEBMeiPAvKNWyZjuYyUqMndcP1f335oHqn3BEQbs2NFtVrnK5+6Xg5wSM9TknNNpWghGDUCKGYF+xWXw==, tarball: https://npm.yandex-team.ru/electron-to-chromium/-/electron-to-chromium-1.4.756.tgz?rbtorrent=}
@@ -1045,6 +1080,9 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==, tarball: https://npm.yandex-team.ru/graphemer/-/graphemer-1.4.0.tgz?rbtorrent=fa59de15d488f5504a7bf8e14d736899234b90bd}
 
+  handsontable@14.3.0:
+    resolution: {integrity: sha512-XRKivPK+DkxWTYr+H6ywwLhSn/B5WMj3F3whF7O+Mo6Edm35rF8ydOm6oxVuVWnkvvy4FLqch7wgQk2w6hC8VA==, tarball: https://npm.yandex-team.ru/handsontable/-/handsontable-14.3.0.tgz?rbtorrent=}
+
   has-flag@3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=, tarball: https://npm.yandex-team.ru/has-flag/-/has-flag-3.0.0.tgz?rbtorrent=ca7ec6bdf5a36e5aa9d948c64c0f1d8f0b11b442}
     engines: {node: '>=4'}
@@ -1059,6 +1097,9 @@ packages:
 
   hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==, tarball: https://npm.yandex-team.ru/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz?rbtorrent=43ab0056091589d5e8cb9496177e6ea8c613d98b}
+
+  hyperformula@2.7.0:
+    resolution: {integrity: sha512-fbpLfT8tDGKVA8tIAw4yJ9neQXabL9zJQ3T2de1r7RbdcneGQ9B6hRzi57SFfQ9vy76iR4JexEYG/pV6mcsW8Q==, tarball: https://npm.yandex-team.ru/hyperformula/-/hyperformula-2.7.0.tgz?rbtorrent=}
 
   ignore@5.3.1:
     resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==, tarball: https://npm.yandex-team.ru/ignore/-/ignore-5.3.1.tgz?rbtorrent=}
@@ -1216,6 +1257,9 @@ packages:
     resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==, tarball: https://npm.yandex-team.ru/minimatch/-/minimatch-9.0.4.tgz?rbtorrent=}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  moment@2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==, tarball: https://npm.yandex-team.ru/moment/-/moment-2.29.4.tgz?rbtorrent=f727bdd5e02fc1899128877e6be88b08a8eec617}
+
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==, tarball: https://npm.yandex-team.ru/ms/-/ms-2.1.2.tgz?rbtorrent=269d2b1e4b633a2572e485adbd93b4085872ffe0}
 
@@ -1233,6 +1277,9 @@ packages:
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==, tarball: https://npm.yandex-team.ru/normalize-path/-/normalize-path-3.0.0.tgz?rbtorrent=4134118d28ee8c48a3d2b92bd3f2fa1eb59cc4ac}
     engines: {node: '>=0.10.0'}
+
+  numbro@2.1.2:
+    resolution: {integrity: sha512-7w833BxZmKGLE9HI0aREtNVRVH6WTYUUlWf4qgA5gKNhPQ4F/MRZ14sc0v8eoLORprk9ZTVwYaLwj8N3Zgxwiw==, tarball: https://npm.yandex-team.ru/numbro/-/numbro-2.1.2.tgz?rbtorrent=15e17864af18651b782f4c6ee4b572e16cb80240}
 
   object-assign@4.1.1:
     resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=, tarball: https://npm.yandex-team.ru/object-assign/-/object-assign-4.1.1.tgz?rbtorrent=1109a3223e8668f3df1924224b612e45b41d031b}
@@ -1289,6 +1336,9 @@ packages:
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==, tarball: https://npm.yandex-team.ru/picomatch/-/picomatch-2.3.1.tgz?rbtorrent=d64d76aa10430f60181256e008cc2a586e86ed0c}
     engines: {node: '>=8.6'}
+
+  pikaday@1.8.2:
+    resolution: {integrity: sha512-TNtsE+34BIax3WtkB/qqu5uepV1McKYEgvL3kWzU7aqPCpMEN6rBF3AOwu4WCwAealWlBGobXny/9kJb49C1ew==, tarball: https://npm.yandex-team.ru/pikaday/-/pikaday-1.8.2.tgz?rbtorrent=bbe6ae14a1aa3df3b243d18905876387e3fe0619}
 
   postcss-scss@4.0.9:
     resolution: {integrity: sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==, tarball: https://npm.yandex-team.ru/postcss-scss/-/postcss-scss-4.0.9.tgz?rbtorrent=7c43c16109fcd5c74613fd14b3406708250bcf16}
@@ -1352,6 +1402,9 @@ packages:
 
   regenerator-runtime@0.14.1:
     resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==, tarball: https://npm.yandex-team.ru/regenerator-runtime/-/regenerator-runtime-0.14.1.tgz?rbtorrent=}
+
+  regexp-to-ast@0.4.0:
+    resolution: {integrity: sha512-4qf/7IsIKfSNHQXSwial1IFmfM1Cc/whNBQqRwe0V2stPe7KmN1U0tWQiIx6JiirgSrisjE0eECdNf7Tav1Ntw==, tarball: https://npm.yandex-team.ru/regexp-to-ast/-/regexp-to-ast-0.4.0.tgz?rbtorrent=73072780ad6b51b483b238390b9c97efd5d805d6}
 
   require-directory@2.1.1:
     resolution: {integrity: sha1-jGStX9MNqxyXbiNE/+f3kqam30I=, tarball: https://npm.yandex-team.ru/require-directory/-/require-directory-2.1.1.tgz?rbtorrent=6f3a1c36c5c614529836495759b539128977fc9d}
@@ -1465,6 +1518,12 @@ packages:
 
   text-table@0.2.0:
     resolution: {integrity: sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=, tarball: https://npm.yandex-team.ru/text-table/-/text-table-0.2.0.tgz?rbtorrent=9494ae77197443588f7082168b3dc30c27236a28}
+
+  throw@1.1.1:
+    resolution: {integrity: sha512-tyOKKUYwkeiUumu2xE/K4orCLNlL5cmUHoUgWod5Nb9uUoiSNTSsm0YHe1XvQYlaDWzJF41p7vsSbRz/w70FIQ==, tarball: https://npm.yandex-team.ru/throw/-/throw-1.1.1.tgz?rbtorrent=d84b56250b5599e9373be5d67205717a7ef175f4}
+
+  tiny-emitter@2.1.0:
+    resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==, tarball: https://npm.yandex-team.ru/tiny-emitter/-/tiny-emitter-2.1.0.tgz?rbtorrent=e6b72bb79996ed731a9af65f8f086c3e3b397814}
 
   to-fast-properties@2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=, tarball: https://npm.yandex-team.ru/to-fast-properties/-/to-fast-properties-2.0.0.tgz?rbtorrent=9510e011a9a6b99a9b8eef87cd09723fcd8720b6}
@@ -1936,6 +1995,12 @@ snapshots:
 
   '@floating-ui/utils@0.2.2': {}
 
+  '@handsontable/pikaday@1.0.0': {}
+
+  '@handsontable/react@14.3.0(handsontable@14.3.0)':
+    dependencies:
+      handsontable: 14.3.0
+
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
@@ -2115,6 +2180,10 @@ snapshots:
 
   '@types/parse-json@4.0.2': {}
 
+  '@types/pikaday@1.7.4':
+    dependencies:
+      moment: 2.29.4
+
   '@types/prop-types@15.7.12': {}
 
   '@types/react-dom@18.3.0':
@@ -2289,6 +2358,8 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
+  bignumber.js@8.1.1: {}
+
   binary-extensions@2.3.0: {}
 
   brace-expansion@1.1.11:
@@ -2328,6 +2399,10 @@ snapshots:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
 
+  chevrotain@6.5.0:
+    dependencies:
+      regexp-to-ast: 0.4.0
+
   chokidar@3.6.0:
     dependencies:
       anymatch: 3.1.3
@@ -2365,6 +2440,8 @@ snapshots:
   convert-source-map@1.9.0: {}
 
   convert-source-map@2.0.0: {}
+
+  core-js@3.37.1: {}
 
   cosmiconfig@7.1.0:
     dependencies:
@@ -2406,6 +2483,8 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.5
       csstype: 3.1.3
+
+  dompurify@2.5.5: {}
 
   electron-to-chromium@1.4.756: {}
 
@@ -2623,6 +2702,18 @@ snapshots:
 
   graphemer@1.4.0: {}
 
+  handsontable@14.3.0:
+    dependencies:
+      '@handsontable/pikaday': 1.0.0
+      '@types/pikaday': 1.7.4
+      core-js: 3.37.1
+      dompurify: 2.5.5
+      moment: 2.29.4
+      numbro: 2.1.2
+      pikaday: 1.8.2
+    optionalDependencies:
+      hyperformula: 2.7.0
+
   has-flag@3.0.0: {}
 
   has-flag@4.0.0: {}
@@ -2634,6 +2725,11 @@ snapshots:
   hoist-non-react-statics@3.3.2:
     dependencies:
       react-is: 16.13.1
+
+  hyperformula@2.7.0:
+    dependencies:
+      chevrotain: 6.5.0
+      tiny-emitter: 2.1.0
 
   ignore@5.3.1: {}
 
@@ -2765,6 +2861,8 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
+  moment@2.29.4: {}
+
   ms@2.1.2: {}
 
   nanoid@3.3.7: {}
@@ -2774,6 +2872,10 @@ snapshots:
   node-releases@2.0.14: {}
 
   normalize-path@3.0.0: {}
+
+  numbro@2.1.2:
+    dependencies:
+      bignumber.js: 8.1.1
 
   object-assign@4.1.1: {}
 
@@ -2824,6 +2926,8 @@ snapshots:
   picocolors@1.0.0: {}
 
   picomatch@2.3.1: {}
+
+  pikaday@1.8.2: {}
 
   postcss-scss@4.0.9(postcss@8.4.38):
     dependencies:
@@ -2895,6 +2999,8 @@ snapshots:
       resolve: 1.22.8
 
   regenerator-runtime@0.14.1: {}
+
+  regexp-to-ast@0.4.0: {}
 
   require-directory@2.1.1: {}
 
@@ -3005,6 +3111,10 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   text-table@0.2.0: {}
+
+  throw@1.1.1: {}
+
+  tiny-emitter@2.1.0: {}
 
   to-fast-properties@2.0.0: {}
 
