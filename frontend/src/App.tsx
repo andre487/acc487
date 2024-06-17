@@ -1,9 +1,9 @@
-import Header from './components/header/Header.tsx';
-import NotificationViewer from './components/notificationViewer/NotificationViewer.tsx';
-import Grid from './components/grid/Grid.tsx';
-import {useAppContext} from './context/appContext.ts';
-import ErrorListener from './components/errorListener/ErrorListener.tsx';
-import AccDataHandler from './components/accDataHandler/AccDataHandler.tsx';
+import AccDataHandler from '@components/accDataHandler/AccDataHandler.tsx';
+import ErrorListener from '@components/errorListener/ErrorListener.tsx';
+import Grid from '@components/grid/Grid.tsx';
+import Header from '@components/header/Header.tsx';
+import NotificationViewer from '@components/notificationViewer/NotificationViewer.tsx';
+import {useAppContext} from '@context/appContext.ts';
 
 export default function App() {
     const {

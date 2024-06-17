@@ -13,10 +13,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@silevis/reactgrid": "^4.1.6",
+    "@handsontable/react": "^14.3.0",
     "ajv": "^8.13.0",
+    "handsontable": "^14.3.0",
+    "hyperformula": "^2.7.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "throw": "^1.1.1"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",

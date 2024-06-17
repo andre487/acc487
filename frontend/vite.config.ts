@@ -1,10 +1,8 @@
-import * as path from 'node:path';
-
-import { defineConfig } from 'vite';
+import {nodeResolve} from '@rollup/plugin-node-resolve';
 import react from '@vitejs/plugin-react';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import { typescriptPaths } from 'rollup-plugin-typescript-paths';
+import * as path from 'node:path';
+import {typescriptPaths} from 'rollup-plugin-typescript-paths';
+import {defineConfig} from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +10,7 @@ export default defineConfig({
     base: '/assets',
     build: {
         manifest: true,
+        sourcemap: process.env.NODE_ENV !== 'production' ? 'inline' : false,
         outDir: path.join(__dirname, '..', 'assets'),
         assetsDir: '.',
         emptyOutDir: true,
@@ -22,7 +21,6 @@ export default defineConfig({
             plugins: [
                 typescriptPaths({preserveExtensions: true}),
                 nodeResolve(),
-                commonjs(),
             ],
         },
     },
