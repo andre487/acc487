@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@handsontable/react": "^14.3.0",
-    "@silevis/reactgrid": "^4.1.6",
     "ajv": "^8.13.0",
     "handsontable": "^14.3.0",
     "hyperformula": "^2.7.0",

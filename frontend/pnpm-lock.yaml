@@ -11,9 +11,6 @@ importers:
       '@handsontable/react':
         specifier: ^14.3.0
         version: 14.3.0(handsontable@14.3.0)
-      '@silevis/reactgrid':
-        specifier: ^4.1.6
-        version: 4.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       ajv:
         specifier: ^8.13.0
         version: 8.13.0
@@ -590,12 +587,6 @@ packages:
     resolution: {integrity: sha512-TGGO7v7qOq4CYmSBVEYpI1Y5xDuCEnbVC5Vth8mOsW0gDSzxNrVERPc790IGHsrT2dQSimgMr9Ub3Y1Jci5/8w==, tarball: https://npm.yandex-team.ru/@rollup%2frollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.17.2.tgz?rbtorrent=}
     cpu: [x64]
     os: [win32]
-
-  '@silevis/reactgrid@4.1.6':
-    resolution: {integrity: sha512-sD5sCE8vVXTdrLSB+6R3M51dFGsGkq35UfaZ3PIXlV3t2+b13w3WDZV6aRrvOLvX4IpLNFm/j732SAB4wl5ggA==, tarball: https://npm.yandex-team.ru/@silevis%2freactgrid/-/reactgrid-4.1.6.tgz?rbtorrent=}
-    peerDependencies:
-      react: ^16.13.1 || ^17.0.0 || ^18.2.0
-      react-dom: ^16.13.1 || ^17.0.0 || ^18.2.0
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==, tarball: https://npm.yandex-team.ru/@tsconfig%2fnode10/-/node10-1.0.11.tgz?rbtorrent=}
@@ -1556,9 +1547,6 @@ packages:
   ts-toolbelt@9.6.0:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==, tarball: https://npm.yandex-team.ru/ts-toolbelt/-/ts-toolbelt-9.6.0.tgz?rbtorrent=27bda4a86e276b1c37ce52bf49f8667213231170}
 
-  tslib@2.6.2:
-    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==, tarball: https://npm.yandex-team.ru/tslib/-/tslib-2.6.2.tgz?rbtorrent=7f559dc3bff22dd83af38b51fbaa319f7b159646}
-
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==, tarball: https://npm.yandex-team.ru/type-check/-/type-check-0.4.0.tgz?rbtorrent=2c9ca61e1431737ce0cdb7ea5296ee7636773d89}
     engines: {node: '>= 0.8.0'}
@@ -2124,13 +2112,6 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.17.2':
     optional: true
-
-  '@silevis/reactgrid@4.1.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      sass: 1.77.1
-      tslib: 2.6.2
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -3145,8 +3126,6 @@ snapshots:
       yn: 3.1.1
 
   ts-toolbelt@9.6.0: {}
-
-  tslib@2.6.2: {}
 
   type-check@0.4.0:
     dependencies:
